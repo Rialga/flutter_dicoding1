@@ -1,158 +1,81 @@
 import 'package:flutter/material.dart';
 
-import 'util.dart';
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Belajar',
-      theme: ThemeData(
-        primarySwatch: Colors.cyan,
-      ),
-      home: FirstScreen(),
+      title: 'Wisata Bandung',
+      theme: ThemeData.dark(),
+      home: DetailScreen(),
     );
   }
 }
 
-class FirstScreen extends StatelessWidget {
+class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.menu,
-            color: Colors.white,
-          ),
-        ),
-        title: Text(
-          'First Screen',
-          style: TextStyle(color: Colors.white),
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-          )
-        ],
-      ),
-      // body: Center(
-      //   child: PerubahanText(
-      //     text: 'Hello World!',
-      //   ),
-      // ),
-      //
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      backgroundColor: Colors.black,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
+          //TULISAN FARM HOUSE RIALGA
           Container(
-            child: Center(
-              child: Text(
-                'Hello  World !',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
+            margin: EdgeInsets.only(top: 16.0),
+            child: Text(
+              'Farm House Rialga',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            decoration: BoxDecoration(
-              color: pastelCyan,
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.grey, offset: Offset(2, 3), blurRadius: 3)
-              ],
-              borderRadius: BorderRadius.circular(10),
-            ),
-            width: 170,
-            height: 100,
-            margin: EdgeInsets.only(top: 20),
           ),
+
+          //ICON - ICON
           Container(
-            child: Center(
-              child: Text(
-                'Hello  World !',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
+            margin: EdgeInsets.symmetric(vertical: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Icon(Icons.calendar_today),
+                    SizedBox(height: 8.0),
+                    Text('Open Everyday'),
+                  ],
                 ),
-              ),
-            ),
-            decoration: BoxDecoration(
-              color: pastelCyan,
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.grey, offset: Offset(2, 3), blurRadius: 3)
+                Column(
+                  children: <Widget>[
+                    Icon(Icons.access_time),
+                    SizedBox(height: 8.0),
+                    Text('09.00-20.00'),
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Icon(Icons.monetization_on),
+                    SizedBox(height: 8.0),
+                    Text('Rp 25.000'),
+                  ],
+                )
               ],
-              borderRadius: BorderRadius.circular(10),
             ),
-            width: 170,
-            height: 100,
-            margin: EdgeInsets.only(
-              top: 20,
+          ),
+
+          //TEXT DESKRIPSI
+          Container(
+            padding: EdgeInsets.all(16.0),
+            child: Text(
+              'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16.0),
             ),
           ),
         ],
       ),
-
-      floatingActionButton: FloatingActionButton(
-        child: Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
-      ),
-    );
-  }
-}
-
-//Contoh statLess Widgt
-class Heading extends StatelessWidget {
-  final String text;
-
-  Heading({Key key, this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-        fontSize: 24.0,
-        fontWeight: FontWeight.bold,
-      ),
-    );
-  }
-}
-
-// Contoh statefull widges
-class PerubahanText extends StatefulWidget {
-  final String text;
-
-  const PerubahanText({Key key, this.text});
-
-  @override
-  _PerubahanTextState createState() => _PerubahanTextState();
-}
-
-class _PerubahanTextState extends State<PerubahanText> {
-  double _ukuranText = 16.0;
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text(widget.text, style: TextStyle(fontSize: _ukuranText)),
-        RaisedButton(
-          child: Text("Perbesar"),
-          onPressed: () {
-            setState(() {
-              _ukuranText = 32.0;
-            });
-          },
-        )
-      ],
     );
   }
 }
