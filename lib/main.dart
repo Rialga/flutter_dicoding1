@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(),
       home: Scaffold(
         backgroundColor: Colors.black,
-        body: HomePage(),
+        body: SingleChildScrollView(child: HomePage()),
       ),
     );
   }

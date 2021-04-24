@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 
+// ignore: unused_element
+String _email = '';
+// ignore: unused_element
+String _password = '';
+
+var informationTextStyle = TextStyle(
+  fontFamily: 'Oxygen',
+);
+
 class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
+        //Image Di Atas
+        Image.asset('assets/images/farm-house.jpg'),
+
         //TULISAN FARM HOUSE RIALGA
         Container(
           margin: EdgeInsets.only(top: 16.0),
@@ -14,6 +26,7 @@ class HomePage extends StatelessWidget {
             style: TextStyle(
               fontSize: 30.0,
               fontWeight: FontWeight.bold,
+              fontFamily: 'Staatliches',
             ),
           ),
         ),
@@ -28,21 +41,30 @@ class HomePage extends StatelessWidget {
                 children: <Widget>[
                   Icon(Icons.calendar_today),
                   SizedBox(height: 8.0),
-                  Text('Open Everyday'),
+                  Text(
+                    'Open Everyday',
+                    style: informationTextStyle,
+                  ),
                 ],
               ),
               Column(
                 children: <Widget>[
                   Icon(Icons.access_time),
                   SizedBox(height: 8.0),
-                  Text('09.00-20.00'),
+                  Text(
+                    '09.00 - 20.00',
+                    style: informationTextStyle,
+                  ),
                 ],
               ),
               Column(
                 children: <Widget>[
                   Icon(Icons.monetization_on),
                   SizedBox(height: 8.0),
-                  Text('Rp 25.000'),
+                  Text(
+                    'Rp 25.000',
+                    style: informationTextStyle,
+                  ),
                 ],
               )
             ],
@@ -58,7 +80,80 @@ class HomePage extends StatelessWidget {
             style: TextStyle(fontSize: 16.0),
           ),
         ),
+
+        //IMAGE Slide
+        Container(
+          height: 150,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Image.asset('assets/images/kawah-putih.jpg'),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Image.asset('assets/images/taman-film.jpg'),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Image.asset('assets/images/code.png'),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Image.asset('assets/images/ranca-upas.jpg'),
+              ),
+            ],
+          ),
+        ),
+
+        // Text Field
+        Container(
+            padding: EdgeInsets.only(left: 50, right: 50, bottom: 50, top: 16),
+            child: Column(
+              children: [
+                TextField(
+                  onChanged: (String value) {
+                    setState(() {
+                      _email = value;
+                    });
+                  },
+                ),
+                TextField(
+                  onChanged: (String value) {
+                    setState(() {
+                      _email = value;
+                    });
+                  },
+                ),
+              ],
+            )),
+
+        // Button
+        Container(
+          padding: EdgeInsets.only(left: 100, right: 100),
+          // ignore: deprecated_member_use
+          child: FlatButton(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+            color: Colors.red,
+            textColor: Colors.white,
+            disabledColor: Colors.grey,
+            disabledTextColor: Colors.black,
+            padding: EdgeInsets.all(8.0),
+            splashColor: Colors.blueAccent,
+            onPressed: () {
+              // Aksi ketika button diklik
+            },
+            child: Text(
+              'Flat Button',
+              style: TextStyle(fontSize: 20.0),
+            ),
+          ),
+        )
       ],
     );
   }
+
+  void setState(Null Function() param0) {}
 }
