@@ -40,7 +40,7 @@ class ListPage extends StatelessWidget {
                             style: TextStyle(fontSize: 16.0),
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 40,
                           ),
                           Text(place.location),
                         ],
