@@ -137,7 +137,7 @@ class HomePage extends StatelessWidget {
 
             // Button
             Container(
-              padding: EdgeInsets.only(left: 100, right: 100),
+              padding: EdgeInsets.only(left: 150, right: 150 ,bottom: 50),
               // ignore: deprecated_member_use
               child: FlatButton(
                 shape: RoundedRectangleBorder(
@@ -146,7 +146,7 @@ class HomePage extends StatelessWidget {
                 textColor: Colors.white,
                 disabledColor: Colors.grey,
                 disabledTextColor: Colors.black,
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(10.0),
                 splashColor: Colors.blueAccent,
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {

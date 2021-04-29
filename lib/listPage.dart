@@ -28,6 +28,7 @@ class ListPage extends StatelessWidget {
   }
 }
 
+// List (untuk [Phone])
 class TourismPlaceList extends StatelessWidget {
   final int gridCount;
   TourismPlaceList({@required this.gridCount});
@@ -79,6 +80,7 @@ class TourismPlaceList extends StatelessWidget {
   }
 }
 
+// Grid untuk lebih bigger
 class TourismPlaceGrid extends StatelessWidget {
   final int gridCount;
   TourismPlaceGrid({@required this.gridCount});
