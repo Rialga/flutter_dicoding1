@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 16.0),
               child: Text(
-                'Farm House Balap Liar',
+                'Farm House Bandung dicoding',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 30.0,
